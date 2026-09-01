@@ -1,4 +1,4 @@
-import { useDraggable } from "@dnd-kit/core";
+﻿import { useDraggable } from "@dnd-kit/core";
 
 function KanbanTaskCard({
     task,
@@ -38,7 +38,7 @@ function KanbanTaskCard({
                 }
                 ${
                     darkMode
-                        ? "bg-gray-700 border-gray-600"
+                        ? "bg-slate-800 border-slate-600"
                         : "bg-gray-50 border-gray-200"
                 }
             `}
@@ -66,7 +66,7 @@ function KanbanTaskCard({
                         text-xs mt-3
                         ${
                             darkMode
-                                ? "text-gray-400"
+                                ? "text-slate-400"
                                 : "text-gray-500"
                         }
                     `}
@@ -106,7 +106,7 @@ function KanbanTaskCard({
                             task.status === "Done"
                                 ? "bg-green-100 text-green-700"
                                 : task.status === "In Progress"
-                                ? "bg-blue-100 text-blue-700"
+                                ? "bg-orange-100 text-orange-700"
                                 : "bg-yellow-100 text-yellow-700"
                         }
                     `}

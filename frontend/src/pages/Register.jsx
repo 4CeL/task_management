@@ -38,9 +38,12 @@ function Register(){
     };
 
     return(
-        <div className="min-h-screen flex items-center justify-center bg-gray-100">
-            <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-md">
-                <h1 className="text-3xl font-bold text_center mb-6">Register</h1>
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-50 to-white">
+            <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-lg border border-orange-100">
+                <div className="text-center mb-8">
+                    <h1 className="text-3xl font-black text-orange-500 mb-1">TaskFlow</h1>
+                    <p className="text-gray-500 text-sm">Create your account</p>
+                </div>
                 <form 
                     onSubmit={handleRegister}
                     className="space-y-4"
@@ -54,7 +57,7 @@ function Register(){
                             value={form.username}
                             onChange={handleChange}
                             placeholder="Enter Username"
-                            className="w-full border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-orange-500"
                             required
                         />
                     </div>
@@ -67,7 +70,7 @@ function Register(){
                             value={form.email}
                             onChange={handleChange}
                             placeholder="Enter Email"
-                            className="w-full border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-orange-500"
                             required
                         />
                     </div>
@@ -80,14 +83,14 @@ function Register(){
                             value={form.password}
                             onChange={handleChange}
                             placeholder="Enter Password"
-                            className="w-full border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-orange-500"
                             required
                         />
                     </div>
                     {/* Register Button */}
                     <button
                         type="submit"
-                        className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg transition"
+                        className="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-lg transition"
                         disabled={loading}
                     >
                         {loading ? "Loading..." : "Register"}
@@ -95,7 +98,7 @@ function Register(){
                 </form>
                 <p className="text-center mt-4 text-sm">
                     Already have an account?
-                    <Link to="/login" className="text-blue-500 ml-1">
+                    <Link to="/login" className="text-orange-500 ml-1">
                         Login
                     </Link>
                 </p>

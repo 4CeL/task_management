@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
@@ -97,8 +97,8 @@ function CalendarPage() {
                 min-h-screen flex
                 ${
                     darkMode
-                        ? "bg-gray-900 text-white"
-                        : "bg-gray-100 text-gray-900"
+                        ? "bg-slate-950 text-white"
+                        : "bg-orange-50 text-gray-900"
                 }
             `}
         >
@@ -117,7 +117,7 @@ function CalendarPage() {
                         px-6 py-4 flex items-center justify-between border-b
                         ${
                             darkMode
-                                ? "bg-gray-800 border-gray-700"
+                                ? "bg-slate-900 border-slate-700"
                                 : "bg-white border-gray-200"
                         }
                     `}
@@ -125,7 +125,7 @@ function CalendarPage() {
                     <div className="flex items-center gap-3">
                         <button
                             onClick={() => setOpenSidebar(true)}
-                            className="md:hidden bg-blue-500 text-white px-3 py-2 rounded-lg"
+                            className="md:hidden bg-orange-500 text-white px-3 py-2 rounded-lg"
                         >
                             ☰
                         </button>
@@ -140,7 +140,7 @@ function CalendarPage() {
                                     text-sm mt-1
                                     ${
                                         darkMode
-                                            ? "text-gray-400"
+                                            ? "text-slate-400"
                                             : "text-gray-500"
                                     }
                                 `}
@@ -161,7 +161,7 @@ function CalendarPage() {
                                     lg:col-span-2 p-6 rounded-2xl shadow
                                     ${
                                         darkMode
-                                            ? "bg-gray-800 border border-gray-700"
+                                            ? "bg-slate-900 border border-slate-700"
                                             : "bg-white"
                                     }
                                 `}
@@ -178,7 +178,7 @@ function CalendarPage() {
 
                                         return (
                                             <div className="flex justify-center mt-1">
-                                                <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+                                                <span className="w-2 h-2 rounded-full bg-orange-500"></span>
                                             </div>
                                         );
                                     }}
@@ -191,7 +191,7 @@ function CalendarPage() {
                                     p-6 rounded-2xl shadow
                                     ${
                                         darkMode
-                                            ? "bg-gray-800 border border-gray-700"
+                                            ? "bg-slate-900 border border-slate-700"
                                             : "bg-white"
                                     }
                                 `}
@@ -214,7 +214,7 @@ function CalendarPage() {
                                                     p-4 rounded-xl border
                                                     ${
                                                         darkMode
-                                                            ? "bg-gray-700 border-gray-600"
+                                                            ? "bg-slate-800 border-slate-600"
                                                             : "bg-gray-50 border-gray-200"
                                                     }
                                                 `}
@@ -246,7 +246,7 @@ function CalendarPage() {
                                                                 task.status === "Done"
                                                                     ? "bg-green-100 text-green-700"
                                                                     : task.status === "In Progress"
-                                                                    ? "bg-blue-100 text-blue-700"
+                                                                    ? "bg-orange-100 text-orange-700"
                                                                     : "bg-yellow-100 text-yellow-700"
                                                             }
                                                         `}
@@ -283,7 +283,7 @@ function CalendarPage() {
                                         <p
                                             className={
                                                 darkMode
-                                                    ? "text-gray-400"
+                                                    ? "text-slate-400"
                                                     : "text-gray-500"
                                             }
                                         >

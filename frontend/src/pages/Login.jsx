@@ -71,9 +71,12 @@ function Login(){
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-100">
-            <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-md">
-                <h1 className="text-3xl font-bold text-center mb-6">Login</h1>
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-50 to-white">
+            <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-lg border border-orange-100">
+                <div className="text-center mb-8">
+                    <h1 className="text-3xl font-black text-orange-500 mb-1">TaskFlow</h1>
+                    <p className="text-gray-500 text-sm">Sign in to your account</p>
+                </div>
                 <form 
                     onSubmit={handleLogin}
                     className="space-y-4"
@@ -87,7 +90,7 @@ function Login(){
                             value={form.email}
                             onChange={handleChange}
                             placeholder="Enter Email"
-                            className="w-full border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-orange-500"
                             required
                         />
                     </div>
@@ -101,7 +104,7 @@ function Login(){
                             value={form.password}
                             onChange={handleChange}
                             placeholder="Enter Password"
-                            className="w-full border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-orange-500"
                             required
                         />
                     </div>
@@ -109,7 +112,7 @@ function Login(){
                     <button 
                         type="submit"
                         disabled={loading}
-                        className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-lg transition"
+                        className="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-lg transition"
                     >
                         {
                             loading ? "Loading..." : "Login"
@@ -129,7 +132,7 @@ function Login(){
                     Don't have an account? 
                     <Link 
                         to="/register"
-                        className="text-blue-500 hover:underline ml-1"
+                        className="text-orange-500 hover:underline ml-1"
                     >
                         Register
                     </Link>

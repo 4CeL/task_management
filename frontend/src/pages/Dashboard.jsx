@@ -191,8 +191,8 @@ function Dashboard() {
                 min-h-screen flex
                 ${
                     darkMode
-                        ? "bg-gray-900 text-white"
-                        : "bg-gray-100 text-gray-900"
+                        ? "bg-slate-950 text-white"
+                        : "bg-orange-50 text-gray-900"
                 }
             `}
         >
@@ -211,179 +211,157 @@ function Dashboard() {
                 {/* Navbar */}
                 <div
                     className={`
-                        px-6 py-4 flex items-center justify-between border-b
+                        shadow px-6 py-4 flex items-center justify-between border-b
                         ${
                             darkMode
-                                ? "bg-gray-800 border-gray-700"
+                                ? "bg-slate-900 border-slate-700"
                                 : "bg-white border-gray-200"
                         }
                     `}
                 >
-
                     {/* LEFT */}
-                    <div className="flex items-center gap-4 flex-1">
-
+                    <div className="flex items-center gap-3">
                         <button
                             onClick={() => setOpenSidebar(true)}
-                            className="md:hidden bg-blue-500 text-white px-3 py-2 rounded-lg"
+                            className="md:hidden bg-orange-500 text-white px-3 py-2 rounded-lg"
                         >
                             ☰
                         </button>
 
-                        {/* SEARCH */}
-                        <div
-                            className={`
-                                flex items-center gap-3 px-4 py-3 rounded-2xl w-full max-w-xl ml-20
-                                ${
-                                    darkMode
-                                        ? "bg-gray-700"
-                                        : "bg-gray-100"
-                                }
-                            `}
-                        >
-
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="w-5 h-5 text-gray-400"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M21 21l-4.35-4.35m1.85-5.65a7.5 7.5 0 11-15 0 7.5 7.5 0 0115 0z"
-                                />
-                            </svg>
-
-                            <input
-                                type="text"
-                                placeholder="Search task"
-                                className={`
-                                    bg-transparent outline-none w-full
-                                    ${
-                                        darkMode
-                                            ? "placeholder:text-gray-400 text-white"
-                                            : "placeholder:text-gray-500 text-black"
-                                    }
-                                `}
-                            />
-
+                        <div>
+                            <h1 className="text-2xl font-bold">
+                                Dashboard
+                            </h1>
+                            <p className={`text-sm mt-1 ${ darkMode ? "text-slate-400" : "text-gray-500" }`}>
+                                Plan, prioritize, and track your tasks with ease.
+                            </p>
                         </div>
-
                     </div>
 
-                    {/* RIGHT */}
-                    <div className="flex items-center gap-4 ml-6">
-
-                        {/* USER PROFILE */}
+                    {/* RIGHT - User Profile */}
+                    <div className="flex items-center gap-4">
                         <div
                             className={`
                                 flex items-center gap-3 px-3 py-2 rounded-2xl
                                 ${
                                     darkMode
-                                        ? "bg-gray-700"
+                                        ? "bg-slate-800"
                                         : "bg-gray-100"
                                 }
                             `}
                         >
-
                             {/* AVATAR */}
-                            <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-lg">
+                            <div className="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold text-base">
                                 {user?.username?.charAt(0).toUpperCase()}
                             </div>
 
                             {/* USER INFO */}
                             <div className="hidden md:block">
-
-                                <p className="font-semibold">
+                                <p className="font-semibold text-sm">
                                     {user?.username}
                                 </p>
-
-                                <p
-                                    className={`
-                                        text-sm
-                                        ${
-                                            darkMode
-                                                ? "text-gray-400"
-                                                : "text-gray-500"
-                                        }
-                                    `}
-                                >
+                                <p className={`text-xs ${ darkMode ? "text-slate-400" : "text-gray-500" }`}>
                                     {user?.email}
                                 </p>
-
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
 
                 <div className="max-w-7xl mx-auto p-6">
                     {loading && <LoadingSpinner />}
-
-                    {/* Header */}
-                    <div className="mb-6">
-                        <h1 className="text-3xl font-bold">
-                            Dashboard
-                        </h1>
-
-                        <p className={darkMode ? "text-gray-400 mt-1" : "text-gray-500 mt-1"}>
-                            Plan, prioritize, and track your tasks with ease.
-                        </p>
-                    </div>
 
                     {/* Main Grid */}
                     <div className="grid grid-cols-1 lg:grid-cols-4 gap-5">
 
                         {/* Info Card */}
                         <div className={`p-6 rounded-2xl shadow lg:col-span-4 ${
-                            darkMode ? "bg-gray-800 border border-gray-700" : "bg-white"
+                            darkMode ? "bg-slate-900 border border-slate-700" : "bg-white"
                         }`}>
                             <h2 className="text-xl font-bold">
-                                Welcome back, {user?.username}
+                                Welcome back, {user?.username} 👋
                             </h2>
 
-                            <p className={darkMode ? "text-gray-400 mt-2" : "text-gray-500 mt-2"}>
+                            <p className={darkMode ? "text-slate-400 mt-2" : "text-gray-500 mt-2"}>
                                 Use the Tasks page to manage your task list, or open the Kanban board to organize tasks by status.
                             </p>
                         </div>
 
+                        {/* Search Bar */}
+                        <div className="lg:col-span-4">
+                            <div
+                                className={`
+                                    flex items-center gap-3 px-4 py-3 rounded-2xl
+                                    ${
+                                        darkMode
+                                            ? "bg-slate-900 border border-slate-700"
+                                            : "bg-white shadow"
+                                    }
+                                `}
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="w-5 h-5 text-slate-400 flex-shrink-0"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M21 21l-4.35-4.35m1.85-5.65a7.5 7.5 0 11-15 0 7.5 7.5 0 0115 0z"
+                                    />
+                                </svg>
+                                <input
+                                    type="text"
+                                    value={search}
+                                    onChange={(e) => setSearch(e.target.value)}
+                                    placeholder="Search task..."
+                                    className={`
+                                        bg-transparent outline-none w-full
+                                        ${
+                                            darkMode
+                                                ? "placeholder:text-slate-400 text-white"
+                                                : "placeholder:text-gray-500 text-black"
+                                        }
+                                    `}
+                                />
+                            </div>
+                        </div>
+
                         {/* Statistics Cards */}
                         <div className={`p-5 rounded-2xl shadow lg:col-span-1 ${
-                            darkMode ? "bg-gray-800 border border-gray-700" : "bg-white"
+                            darkMode ? "bg-slate-900 border border-slate-700" : "bg-white"
                         }`}>
-                            <p className={darkMode ? "text-gray-400 text-sm" : "text-gray-500 text-sm"}>
+                            <p className={darkMode ? "text-slate-400 text-sm" : "text-gray-500 text-sm"}>
                                 Total Tasks
                             </p>
                             <h2 className="text-4xl font-bold mt-3">{totalTasks}</h2>
                         </div>
 
                         <div className={`p-5 rounded-2xl shadow ${
-                            darkMode ? "bg-gray-800 border border-gray-700" : "bg-white"
+                            darkMode ? "bg-slate-900 border border-slate-700" : "bg-white"
                         }`}>
-                            <p className={darkMode ? "text-gray-400 text-sm" : "text-gray-500 text-sm"}>
+                            <p className={darkMode ? "text-slate-400 text-sm" : "text-gray-500 text-sm"}>
                                 Done
                             </p>
                             <h2 className="text-4xl font-bold mt-3 text-green-600">{doneTasks}</h2>
                         </div>
 
                         <div className={`p-5 rounded-2xl shadow ${
-                            darkMode ? "bg-gray-800 border border-gray-700" : "bg-white"
+                            darkMode ? "bg-slate-900 border border-slate-700" : "bg-white"
                         }`}>
-                            <p className={darkMode ? "text-gray-400 text-sm" : "text-gray-500 text-sm"}>
+                            <p className={darkMode ? "text-slate-400 text-sm" : "text-gray-500 text-sm"}>
                                 In Progress
                             </p>
-                            <h2 className="text-4xl font-bold mt-3 text-blue-600">{inProgressTasks}</h2>
+                            <h2 className="text-4xl font-bold mt-3 text-orange-600">{inProgressTasks}</h2>
                         </div>
 
                         <div className={`p-5 rounded-2xl shadow ${
-                            darkMode ? "bg-gray-800 border border-gray-700" : "bg-white"
+                            darkMode ? "bg-slate-900 border border-slate-700" : "bg-white"
                         }`}>
-                            <p className={darkMode ? "text-gray-400 text-sm" : "text-gray-500 text-sm"}>
+                            <p className={darkMode ? "text-slate-400 text-sm" : "text-gray-500 text-sm"}>
                                 Todo
                             </p>
                             <h2 className="text-4xl font-bold mt-3 text-yellow-600">{todoTasks}</h2>
@@ -394,7 +372,7 @@ function Dashboard() {
                                 p-6 rounded-2xl shadow lg:col-span-2
                                 ${
                                     darkMode
-                                        ? "bg-gray-800 border border-gray-700"
+                                        ? "bg-slate-900 border border-slate-700"
                                         : "bg-white"
                                 }
                             `}
@@ -441,7 +419,7 @@ function Dashboard() {
                                                 text-sm mt-1
                                                 ${
                                                     darkMode
-                                                        ? "text-gray-400"
+                                                        ? "text-slate-400"
                                                         : "text-gray-500"
                                                 }
                                             `}
@@ -462,7 +440,7 @@ function Dashboard() {
                                                 flex items-center justify-between pb-4 border-b last:border-b-0
                                                 ${
                                                     darkMode
-                                                        ? "border-gray-700"
+                                                        ? "border-slate-700"
                                                         : "border-gray-200"
                                                 }
                                             `}
@@ -484,7 +462,7 @@ function Dashboard() {
                                                             text-sm
                                                             ${
                                                                 darkMode
-                                                                    ? "text-gray-400"
+                                                                    ? "text-slate-400"
                                                                     : "text-gray-500"
                                                             }
                                                         `}
@@ -506,7 +484,7 @@ function Dashboard() {
                                                         text-sm
                                                         ${
                                                             darkMode
-                                                                ? "text-gray-400"
+                                                                ? "text-slate-400"
                                                                 : "text-gray-500"
                                                         }
                                                     `}
@@ -528,7 +506,7 @@ function Dashboard() {
                                     mt-6 grid grid-cols-2 md:grid-cols-4 gap-4 rounded-2xl p-4
                                     ${
                                         darkMode
-                                            ? "bg-gray-700"
+                                            ? "bg-slate-800"
                                             : "bg-gray-50"
                                     }
                                 `}
@@ -537,7 +515,7 @@ function Dashboard() {
                                     <h3 className="text-2xl font-bold">
                                         {totalTasks}
                                     </h3>
-                                    <p className={darkMode ? "text-gray-400 text-sm" : "text-gray-500 text-sm"}>
+                                    <p className={darkMode ? "text-slate-400 text-sm" : "text-gray-500 text-sm"}>
                                         Total
                                     </p>
                                 </div>
@@ -546,16 +524,16 @@ function Dashboard() {
                                     <h3 className="text-2xl font-bold text-yellow-600">
                                         {todoTasks}
                                     </h3>
-                                    <p className={darkMode ? "text-gray-400 text-sm" : "text-gray-500 text-sm"}>
+                                    <p className={darkMode ? "text-slate-400 text-sm" : "text-gray-500 text-sm"}>
                                         Todo
                                     </p>
                                 </div>
 
                                 <div className="text-center">
-                                    <h3 className="text-2xl font-bold text-blue-600">
+                                    <h3 className="text-2xl font-bold text-orange-600">
                                         {inProgressTasks}
                                     </h3>
-                                    <p className={darkMode ? "text-gray-400 text-sm" : "text-gray-500 text-sm"}>
+                                    <p className={darkMode ? "text-slate-400 text-sm" : "text-gray-500 text-sm"}>
                                         Progress
                                     </p>
                                 </div>
@@ -564,7 +542,7 @@ function Dashboard() {
                                     <h3 className="text-2xl font-bold text-green-600">
                                         {doneTasks}
                                     </h3>
-                                    <p className={darkMode ? "text-gray-400 text-sm" : "text-gray-500 text-sm"}>
+                                    <p className={darkMode ? "text-slate-400 text-sm" : "text-gray-500 text-sm"}>
                                         Done
                                     </p>
                                 </div>
@@ -577,7 +555,7 @@ function Dashboard() {
                                 p-6 rounded-2xl shadow lg:col-span-2
                                 ${
                                     darkMode
-                                        ? "bg-gray-800 border border-gray-700"
+                                        ? "bg-slate-900 border border-slate-700"
                                         : "bg-white"
                                 }
                             `}
@@ -600,13 +578,13 @@ function Dashboard() {
                                                     flex items-start gap-3 pb-4 border-b last:border-b-0
                                                     ${
                                                         darkMode
-                                                            ? "border-gray-700"
+                                                            ? "border-slate-700"
                                                             : "border-gray-200"
                                                     }
                                                 `}
                                             >
 
-                                                <div className="w-3 h-3 rounded-full bg-blue-500 mt-2"></div>
+                                                <div className="w-3 h-3 rounded-full bg-orange-500 mt-2"></div>
 
                                                 <div className="flex-1">
 
@@ -619,7 +597,7 @@ function Dashboard() {
                                                             text-sm mt-1
                                                             ${
                                                                 darkMode
-                                                                    ? "text-gray-400"
+                                                                    ? "text-slate-400"
                                                                     : "text-gray-500"
                                                             }
                                                         `}
@@ -649,7 +627,7 @@ function Dashboard() {
                                         <p
                                             className={
                                                 darkMode
-                                                    ? "text-gray-400"
+                                                    ? "text-slate-400"
                                                     : "text-gray-500"
                                             }
                                         >
@@ -665,14 +643,14 @@ function Dashboard() {
 
                         {/* Completion Rate */}
                         {/* <div className={`p-6 rounded-2xl shadow lg:col-span-2 ${
-                            darkMode ? "bg-gray-800 border border-gray-700" : "bg-white"
+                            darkMode ? "bg-slate-900 border border-slate-700" : "bg-white"
                         }`}>
                             <h2 className="text-xl font-bold mb-4">
                                 Task Progress
                             </h2>
 
                             <div className="flex items-center gap-6">
-                                <div className="w-32 h-32 rounded-full border-[18px] border-blue-500 flex items-center justify-center">
+                                <div className="w-32 h-32 rounded-full border-[18px] border-orange-500 flex items-center justify-center">
                                     <span className="text-3xl font-bold">
                                         {completionRate}%
                                     </span>
@@ -682,7 +660,7 @@ function Dashboard() {
                                     <p className="text-green-600 font-medium">
                                         Done: {doneTasks}
                                     </p>
-                                    <p className="text-blue-600 font-medium">
+                                    <p className="text-orange-600 font-medium">
                                         In Progress: {inProgressTasks}
                                     </p>
                                     <p className="text-yellow-600 font-medium">
@@ -694,7 +672,7 @@ function Dashboard() {
 
                         {/* Priority Summary */}
                         <div className={`p-6 rounded-2xl shadow ${
-                            darkMode ? "bg-gray-800 border border-gray-700" : "bg-white"
+                            darkMode ? "bg-slate-900 border border-slate-700" : "bg-white"
                         }`}>
                             <h2 className="text-xl font-bold mb-4">
                                 Priority
@@ -720,7 +698,7 @@ function Dashboard() {
 
                         {/* Reminder / Overdue */}
                         <div className={`p-6 rounded-2xl shadow ${
-                            darkMode ? "bg-gray-800 border border-gray-700" : "bg-white"
+                            darkMode ? "bg-slate-900 border border-slate-700" : "bg-white"
                         }`}>
                             <h2 className="text-xl font-bold mb-4">
                                 Reminders
@@ -730,7 +708,7 @@ function Dashboard() {
                                 {overdueTasks}
                             </p>
 
-                            <p className={darkMode ? "text-gray-400 mt-2" : "text-gray-500 mt-2"}>
+                            <p className={darkMode ? "text-slate-400 mt-2" : "text-gray-500 mt-2"}>
                                 overdue tasks need your attention.
                             </p>
                         </div>
@@ -739,7 +717,7 @@ function Dashboard() {
 
                         {/* Due Today */}
                         <div className={`p-6 rounded-2xl shadow lg:col-span-2 ${
-                            darkMode ? "bg-gray-800 border border-gray-700" : "bg-white"
+                            darkMode ? "bg-slate-900 border border-slate-700" : "bg-white"
                         }`}>
                             <h2 className="text-xl font-bold mb-4">
                                 Today’s Focus
@@ -751,14 +729,14 @@ function Dashboard() {
                                         {dueTodayTasks}
                                     </p>
 
-                                    <p className={darkMode ? "text-gray-400 mt-2" : "text-gray-500 mt-2"}>
+                                    <p className={darkMode ? "text-slate-400 mt-2" : "text-gray-500 mt-2"}>
                                         tasks due today.
                                     </p>
                                 </div>
 
                                 <button
                                     onClick={() => setOpenCreateModal(true)}
-                                    className="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-xl"
+                                    className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-xl"
                                 >
                                     + Add Task
                                 </button>
@@ -775,6 +753,7 @@ function Dashboard() {
                 open={openCreateModal}
                 onClose={() => setOpenCreateModal(false)}
                 onSuccess={fetchTasks}
+                darkMode={darkMode}
             />
 
         </div>

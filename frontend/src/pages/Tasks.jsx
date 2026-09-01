@@ -166,8 +166,8 @@ function Tasks() {
                 min-h-screen flex
                 ${
                     darkMode
-                        ? "bg-gray-900 text-white"
-                        : "bg-gray-100 text-gray-900"
+                        ? "bg-slate-950 text-white"
+                        : "bg-orange-50 text-gray-900"
                 }
             `}
         >
@@ -187,7 +187,7 @@ function Tasks() {
                         shadow px-6 py-4 flex justify-between items-center
                         ${
                             darkMode
-                                ? "bg-gray-800 border-b border-gray-700"
+                                ? "bg-slate-900 border-b border-slate-700"
                                 : "bg-white"
                         }
                     `}
@@ -195,7 +195,7 @@ function Tasks() {
                     <div className="flex gap-4">
                         <button
                             onClick={() => setOpenSidebar(true)}
-                            className="md:hidden bg-blue-500 text-white px-3 py-2 rounded-lg"
+                            className="md:hidden bg-orange-500 text-white px-3 py-2 rounded-lg"
                         >
                             ☰
                         </button>
@@ -209,7 +209,7 @@ function Tasks() {
                                     text-sm mt-1
                                     ${
                                         darkMode
-                                            ? "text-gray-400"
+                                            ? "text-slate-400"
                                             : "text-gray-500"
                                     }
                                 `}
@@ -221,19 +221,19 @@ function Tasks() {
 
                     <button
                         onClick={() => setOpenCreateModal(true)}
-                        className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg"
+                        className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg"
                     >
                         + Add Task
                     </button>
                 </div>
 
-                <div className="max-w-5xl mx-auto p-6">
+                <div className="max-w-7xl mx-auto p-6">
                     <div
                         className={`
                             p-4 rounded-xl shadow mb-6 flex gap-4
                             ${
                                 darkMode
-                                    ? "bg-gray-800 border border-gray-700"
+                                    ? "bg-slate-900 border border-slate-700"
                                     : "bg-white"
                             }
                         `}
@@ -245,7 +245,7 @@ function Tasks() {
                                 flex-1 border rounded-lg px-4 py-2 outline-none
                                 ${
                                     darkMode
-                                        ? "bg-gray-700 border-gray-600 text-white placeholder:text-gray-400"
+                                        ? "bg-slate-800 border-slate-600 text-white placeholder:text-slate-400"
                                         : "bg-white border-gray-300 text-black placeholder:text-gray-500"
                                 }
                             `}
@@ -260,7 +260,7 @@ function Tasks() {
                                 border rounded-lg px-4 py-2 w-40 outline-none
                                 ${
                                     darkMode
-                                        ? "bg-gray-700 border-gray-600 text-white"
+                                        ? "bg-slate-800 border-slate-600 text-white"
                                         : "bg-white border-gray-300 text-black"
                                 }
                             `}
@@ -278,7 +278,7 @@ function Tasks() {
                                 border rounded-lg px-4 py-2 w-40 outline-none
                                 ${
                                     darkMode
-                                        ? "bg-gray-700 border-gray-600 text-white"
+                                        ? "bg-slate-800 border-slate-600 text-white"
                                         : "bg-white border-gray-300 text-black"
                                 }
                             `}
@@ -301,7 +301,7 @@ function Tasks() {
                                         p-5 rounded-xl shadow
                                         ${
                                             darkMode
-                                                ? "bg-gray-800 border border-gray-700"
+                                                ? "bg-slate-900 border border-slate-700"
                                                 : "bg-white"
                                         }
                                     `}
@@ -331,7 +331,7 @@ function Tasks() {
                                                         text-sm mt-2
                                                         ${
                                                             darkMode
-                                                                ? "text-gray-400"
+                                                                ? "text-slate-400"
                                                                 : "text-gray-500"
                                                         }
                                                     `}
@@ -383,7 +383,7 @@ function Tasks() {
                                                     task.status === "Done"
                                                         ? "bg-green-100 text-green-700"
                                                         : task.status === "In Progress"
-                                                        ? "bg-blue-100 text-blue-700"
+                                                        ? "bg-orange-100 text-orange-700"
                                                         : "bg-yellow-100 text-yellow-700"
                                                 }
                                             `}
@@ -400,12 +400,12 @@ function Tasks() {
                                         p-10 rounded-xl shadow text-center border border-dashed
                                         ${
                                             darkMode
-                                                ? "bg-gray-800 border-gray-700"
+                                                ? "bg-slate-900 border-slate-700"
                                                 : "bg-white border-gray-300"
                                         }
                                     `}
                                 >
-                                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-50 flex items-center justify-center">
+                                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-orange-50 flex items-center justify-center">
                                         <span className="text-3xl">📝</span>
                                     </div>
 
@@ -418,7 +418,7 @@ function Tasks() {
                                             mt-2
                                             ${
                                                 darkMode
-                                                    ? "text-gray-400"
+                                                    ? "text-slate-400"
                                                     : "text-gray-500"
                                             }
                                         `}
@@ -428,7 +428,7 @@ function Tasks() {
 
                                     <button
                                         onClick={() => setOpenCreateModal(true)}
-                                        className="mt-5 bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-lg"
+                                        className="mt-5 bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-lg"
                                     >
                                         + Add Task
                                     </button>
@@ -446,7 +446,7 @@ function Tasks() {
                                     px-4 py-2 rounded-lg border disabled:opacity-50
                                     ${
                                         darkMode
-                                            ? "border-gray-700 bg-gray-800 text-white"
+                                            ? "border-slate-700 bg-slate-900 text-white"
                                             : "border-gray-300 bg-white text-gray-800"
                                     }
                                 `}
@@ -465,7 +465,7 @@ function Tasks() {
                                     px-4 py-2 rounded-lg border disabled:opacity-50
                                     ${
                                         darkMode
-                                            ? "border-gray-700 bg-gray-800 text-white"
+                                            ? "border-slate-700 bg-slate-900 text-white"
                                             : "border-gray-300 bg-white text-gray-800"
                                     }
                                 `}
@@ -481,6 +481,7 @@ function Tasks() {
                 open={openCreateModal}
                 onClose={() => setOpenCreateModal(false)}
                 onSuccess={fetchTasks}
+                darkMode={darkMode}
             />
 
             <EditTaskModal
@@ -488,6 +489,7 @@ function Tasks() {
                 onClose={() => setOpenEditModal(false)}
                 onSuccess={fetchTasks}
                 selectedTask={selectedTask}
+                darkMode={darkMode}
             />
 
             <ConfirmDeleteModal

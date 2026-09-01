@@ -1,4 +1,4 @@
-import { useDroppable } from "@dnd-kit/core";
+﻿import { useDroppable } from "@dnd-kit/core";
 
 function KanbanColumn({
     column,
@@ -16,7 +16,7 @@ function KanbanColumn({
                 rounded-2xl p-4 min-h-[500px]
                 ${
                     darkMode
-                        ? "bg-gray-800 border border-gray-700"
+                        ? "bg-slate-900 border border-slate-700"
                         : "bg-white shadow"
                 }
             `}

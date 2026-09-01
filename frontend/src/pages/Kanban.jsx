@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
@@ -110,7 +110,7 @@ function Kanban() {
         {
             title: "In Progress",
             status: "In Progress",
-            color: "bg-blue-100 text-blue-700",
+            color: "bg-orange-100 text-orange-700",
         },
         {
             title: "Done",
@@ -125,8 +125,8 @@ function Kanban() {
                 min-h-screen flex
                 ${
                     darkMode
-                        ? "bg-gray-900 text-white"
-                        : "bg-gray-100 text-gray-900"
+                        ? "bg-slate-950 text-white"
+                        : "bg-orange-50 text-gray-900"
                 }
             `}
         >
@@ -143,41 +143,43 @@ function Kanban() {
                 
                 <div
                     className={`
-                        shadow px-6 py-4 flex
+                        shadow px-6 py-4 flex items-center justify-between border-b
                         ${
                             darkMode
-                                ? "bg-gray-800 border-b border-gray-700"
-                                : "bg-white"
+                                ? "bg-slate-900 border-slate-700"
+                                : "bg-white border-gray-200"
                         }
                     `}
                 >
-                    <button
-                        onClick={() => setOpenSidebar(true)}
-                        className="md:hidden bg-blue-500 text-white px-3 py-2 rounded-lg mr-3"
-                    >
-                        ☰
-                    </button>
-                    <div>
-                        <h1 className="text-2xl font-bold">
-                            Tasks Status Board
-                        </h1>
-
-                        <p
-                            className={`
-                                text-sm mt-1
-                                ${
-                                    darkMode
-                                        ? "text-gray-400"
-                                        : "text-gray-500"
-                                }
-                            `}
+                    <div className="flex items-center gap-3">
+                        <button
+                            onClick={() => setOpenSidebar(true)}
+                            className="md:hidden bg-orange-500 text-white px-3 py-2 rounded-lg"
                         >
-                            View your tasks by progress status.
-                        </p>
+                            ☰
+                        </button>
+                        <div>
+                            <h1 className="text-2xl font-bold">
+                                Tasks Status Board
+                            </h1>
+
+                            <p
+                                className={`
+                                    text-sm mt-1
+                                    ${
+                                        darkMode
+                                            ? "text-slate-400"
+                                            : "text-gray-500"
+                                    }
+                                `}
+                            >
+                                View your tasks by progress status.
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <div className="p-6">
+                <div className="max-w-7xl mx-auto p-6">
                     {loading ? (
                         <LoadingSpinner />
                     ) : (
@@ -215,7 +217,7 @@ function Kanban() {
                                                         text-center text-sm py-10 border border-dashed rounded-xl
                                                         ${
                                                             darkMode
-                                                                ? "text-gray-400 border-gray-700"
+                                                                ? "text-slate-400 border-slate-700"
                                                                 : "text-gray-500 border-gray-300"
                                                         }
                                                     `}

@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+﻿import { useNavigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import { useState } from "react";
 import toast from "react-hot-toast";
@@ -69,8 +69,8 @@ function Profile() {
                 min-h-screen flex
                 ${
                     darkMode
-                        ? "bg-gray-900 text-white"
-                        : "bg-gray-100 text-gray-900"
+                        ? "bg-slate-950 text-white"
+                        : "bg-orange-50 text-gray-900"
                 }
             `}
         >
@@ -86,24 +86,38 @@ function Profile() {
             <div className="flex-1">
                 <div
                     className={`
-                        shadow px-6 py-4 flex mr-3
+                        shadow px-6 py-4 flex items-center justify-between border-b
                         ${
                             darkMode
-                                ? "bg-gray-800 border-b border-gray-700"
-                                : "bg-white"
+                                ? "bg-slate-900 border-slate-700"
+                                : "bg-white border-gray-200"
                         }
                     `}
                 >
-                    <button
-                        onClick={() => setOpenSidebar(true)}
-                        className="md:hidden bg-blue-500 text-white px-3 py-2 rounded-lg"
-                    >
-                        ☰
-                    </button>
-                    <div>
-                        <h1 className="text-2xl font-bold">
-                            Profile
-                        </h1>
+                    <div className="flex items-center gap-3">
+                        <button
+                            onClick={() => setOpenSidebar(true)}
+                            className="md:hidden bg-orange-500 text-white px-3 py-2 rounded-lg"
+                        >
+                            ☰
+                        </button>
+                        <div>
+                            <h1 className="text-2xl font-bold">
+                                Profile
+                            </h1>
+                            <p
+                                className={`
+                                    text-sm mt-1
+                                    ${
+                                        darkMode
+                                            ? "text-slate-400"
+                                            : "text-gray-500"
+                                    }
+                                `}
+                            >
+                                Manage your account information.
+                            </p>
+                        </div>
                     </div>
                 </div>
 
@@ -113,7 +127,7 @@ function Profile() {
                             rounded-xl shadow p-6
                             ${
                                 darkMode
-                                    ? "bg-gray-800 border border-gray-700"
+                                    ? "bg-slate-900 border border-slate-700"
                                     : "bg-white"
                             }
                         `}
@@ -128,7 +142,7 @@ function Profile() {
                                     text-sm
                                     ${
                                         darkMode
-                                            ? "text-gray-400"
+                                            ? "text-slate-400"
                                             : "text-gray-500"
                                     }
                                 `}>
@@ -149,7 +163,7 @@ function Profile() {
                                                     flex-1 border rounded-lg px-4 py-2
                                                     ${
                                                         darkMode
-                                                            ? "bg-gray-700 border-gray-600 text-white"
+                                                            ? "bg-slate-800 border-slate-600 text-white"
                                                             : "bg-white border-gray-300 text-black"
                                                     }
                                                 `}
@@ -159,7 +173,7 @@ function Profile() {
                                             <button
                                                 type="submit"
                                                 disabled={loading}
-                                                className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg"
+                                                className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg"
                                             >
                                                 {loading ? "Saving..." : "Save"}
                                             </button>

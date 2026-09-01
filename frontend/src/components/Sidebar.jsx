@@ -46,7 +46,7 @@ function Sidebar({
                     md:translate-x-0
                     ${
                         darkMode
-                            ? "bg-gray-800 border-gray-700"
+                            ? "bg-slate-900 border-slate-700"
                             : "bg-white border-gray-200"
                     }
                 `}
@@ -54,7 +54,7 @@ function Sidebar({
 
                 <div>
                     <div className="mb-10">
-                        <h1 className="text-3xl font-black text-blue-600">
+                        <h1 className="text-3xl font-black text-orange-500">
                             TaskFlow
                         </h1>
 
@@ -74,10 +74,10 @@ function Sidebar({
                                 ${
                                     isActive("/")
                                         ? darkMode
-                                            ? "bg-blue-900/40 text-blue-300"
-                                            : "bg-blue-50 text-blue-600"
+                                            ? "bg-orange-500/10 text-orange-500"
+                                            : "bg-orange-50 text-orange-500"
                                         : darkMode
-                                            ? "hover:bg-gray-700 text-gray-200"
+                                            ? "hover:bg-slate-900 text-slate-400"
                                             : "hover:bg-gray-100 text-gray-700"
                                 }
                             `}
@@ -96,10 +96,10 @@ function Sidebar({
                                 ${
                                     isActive("/kanban")
                                         ? darkMode
-                                            ? "bg-blue-900/40 text-blue-300"
-                                            : "bg-blue-50 text-blue-600"
+                                            ? "bg-orange-500/10 text-orange-500"
+                                            : "bg-orange-50 text-orange-500"
                                         : darkMode
-                                            ? "hover:bg-gray-700 text-gray-200"
+                                            ? "hover:bg-slate-900 text-slate-400"
                                             : "hover:bg-gray-100 text-gray-700"
                                 }
                             `}
@@ -118,10 +118,10 @@ function Sidebar({
                                 ${
                                     isActive("/tasks")
                                         ? darkMode
-                                            ? "bg-blue-900/40 text-blue-300"
-                                            : "bg-blue-50 text-blue-600"
+                                            ? "bg-orange-500/10 text-orange-500"
+                                            : "bg-orange-50 text-orange-500"
                                         : darkMode
-                                            ? "hover:bg-gray-700 text-gray-200"
+                                            ? "hover:bg-slate-900 text-slate-400"
                                             : "hover:bg-gray-100 text-gray-700"
                                 }
                             `}
@@ -140,10 +140,10 @@ function Sidebar({
                                 ${
                                     isActive("/calendar")
                                         ? darkMode
-                                            ? "bg-blue-900/40 text-blue-300"
-                                            : "bg-blue-50 text-blue-600"
+                                            ? "bg-orange-500/10 text-orange-500"
+                                            : "bg-orange-50 text-orange-500"
                                         : darkMode
-                                            ? "hover:bg-gray-700 text-gray-200"
+                                            ? "hover:bg-slate-900 text-slate-400"
                                             : "hover:bg-gray-100 text-gray-700"
                                 }
                             `}
@@ -162,10 +162,10 @@ function Sidebar({
                                 ${
                                     isActive("/profile")
                                         ? darkMode
-                                            ? "bg-blue-900/40 text-blue-300"
-                                            : "bg-blue-50 text-blue-600"
+                                            ? "bg-orange-500/10 text-orange-500"
+                                            : "bg-orange-50 text-orange-500"
                                         : darkMode
-                                            ? "hover:bg-gray-700 text-gray-200"
+                                            ? "hover:bg-slate-900 text-slate-400"
                                             : "hover:bg-gray-100 text-gray-700"
                                 }
                             `}
@@ -184,8 +184,8 @@ function Sidebar({
 
                             ${
                                 darkMode
-                                    ? "bg-gray-700 text-gray-200"
-                                    : "bg-gray-100 text-gray-700"
+                                    ? "bg-slate-800 text-slate-200"
+                                    : "bg-orange-50 text-gray-700"
                             }
                         `}
                     >
@@ -211,7 +211,7 @@ function Sidebar({
 
                                 ${
                                     darkMode
-                                        ? "bg-blue-500"
+                                        ? "bg-orange-500"
                                         : "bg-gray-300"
                                 }
                             `}
@@ -237,8 +237,8 @@ function Sidebar({
 
                         ${
                             darkMode
-                                ? "bg-gray-700 border-gray-600"
-                                : "bg-gray-50 border-gray-200"
+                                ? "bg-slate-800 border-slate-700"
+                                : "bg-orange-50 border-orange-100"
                         }
                     `}>
                         <p className={`
@@ -258,7 +258,7 @@ function Sidebar({
 
                             ${
                                 darkMode
-                                    ? "text-gray-400"
+                                    ? "text-slate-400"
                                     : "text-gray-500"
                             }
                         `}>
