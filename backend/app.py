@@ -13,7 +13,7 @@ CORS(
         "http://127.0.0.1:5173"
     ],
     supports_credentials=True,
-    allow_headers=allow_headers=["Content-Type", "Authorization", "ngrok-skip-browser-warning"],
+    allow_headers=["Content-Type", "Authorization", "ngrok-skip-browser-warning"],
     methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     resources={r"/*": {"origins": "*"}}
 )
