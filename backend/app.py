@@ -8,7 +8,7 @@ app = Flask(__name__)
 CORS(
     app,
     origins=[
-        "https://task-workflow-app.vercel.app/",
+        "https://task-workflow-app.vercel.app",
         "http://localhost:5173",
         "http://127.0.0.1:5173"
     ],
