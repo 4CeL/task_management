@@ -20,7 +20,8 @@ import axios from "axios";
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:5000",
   headers: {
-    "ngrok-skip-browser-warning": "69420", // Melewati halaman peringatan ngrok
+    "ngrok-skip-browser-warning": "69420",
+    "Content-Type": "application/json",
   },
 });
 
