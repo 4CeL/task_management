@@ -1,6 +1,7 @@
 import mysql.connector
 from dotenv import load_dotenv
 import os
+import psycopg2
 
 # Load .env
 load_dotenv()
@@ -14,5 +15,13 @@ conn = {
 }
 
 # Function koneksi database
+# def get_db_connection():
+#     return mysql.connector.connect(**conn)
+
 def get_db_connection():
-    return mysql.connector.connect(**conn)
+    # Ambil DATABASE_URL dari file .env
+    # Format: postgresql://postgres.[PROJECT_REF]:[PASSWORD]@aws-0-[REGION].pooler.supabase.com:6543/postgres
+    database_url = os.getenv("DATABASE_URL")
+    
+    conn = psycopg2.connect(database_url)
+    return conn
